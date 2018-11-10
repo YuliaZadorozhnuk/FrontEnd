@@ -1,0 +1,24 @@
+<div class="but1">
+  <button type="button" class="btn btn-info" routerLink="/users">Назад</button>
+</div>
+<div class="bl1 text-center">
+  <p class="h4 mb-4">Зарегистрируйте нового экспедитора</p>
+  <p>Введите данные для входа экспедитора в систему.</p>
+  <input
+    [(ngModel)]="name"
+    type="text" id="name-user" name="name" class="form-control validate mb-4" placeholder="Имя"
+    #nameField="ngModel" required>
+  <input
+    [(ngModel)]="login"
+    type="text" id="login-user" name="login" class="form-control mb-4" placeholder="Логин"
+    #loginField="ngModel" required>
+  <input
+    [(ngModel)]="password"
+    type="password" id="password-user" name="password" class="form-control mb-4" placeholder="Пароль"
+    #passwordField="ngModel" required pattern="[A-Za-z0-9А-Яа-яЁё\D\s]{5,}">
+  <button
+    (click)="addForwarder()"
+    [disabled]="nameField.invalid || loginField.invalid || passwordField.invalid"
+    class="btn btn-info btn-block" type="button">Зарегистрировать.
+  </button>
+</div>

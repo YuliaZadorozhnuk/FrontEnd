@@ -1,0 +1,41 @@
+<h3 class="hh3">Просмотр входящих заявок от заказчика</h3>
+<div class="but1">
+  <button
+    (click)="usersService.logOutU()"
+    type="button" class="btn btn-info" routerLink="/authorization">Назад</button>
+</div>
+<div class="but2">
+  <button type="button" class="btn btn-info" routerLink="/drivers">Водители</button>
+</div>
+<div class="table1">
+  <table class="table table-hover table-bordered">
+    <thead>
+    <tr class="table-info">
+      <th scope="col" width="8%">№ заявки</th>
+      <th scope="col" width="15%">Заказчик</th>
+      <th scope="col" width="15%">Откуда</th>
+      <th scope="col" width="15%">Куда</th>
+      <th scope="col" width="10%">Дата загр</th>
+      <th scope="col" width="10%">Дата разгр</th>
+      <th scope="col" width="13%">Перевозчик</th>
+      <th scope="col" width="8%">Стоимость</th>
+      <th scope="col" width="6%">Статус</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let v of requisition">
+      <td>
+        <a [routerLink]="['/requisition/', v.id]" >{{ v.entryRequisitionByIdEntryRequisition.id }}</a>
+      </td>
+      <td>{{ v.entryRequisitionByIdEntryRequisition.customer }}</td>
+      <td>{{ v.entryRequisitionByIdEntryRequisition.cityByIdCityZ.city }}</td>
+      <td>{{ v.entryRequisitionByIdEntryRequisition.cityByIdCityR.city }}</td>
+      <td>{{ v.entryRequisitionByIdEntryRequisition.dateZ }}</td>
+      <td>{{ v.entryRequisitionByIdEntryRequisition.dateR }}</td>
+      <td>{{ v.driverByIdDriver == null ? '' : v.driverByIdDriver.fio}}</td>
+      <td>{{ v.cost }}</td>
+      <td>{{ v.status == 0 ? '&#10006;' : '&#10004;' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

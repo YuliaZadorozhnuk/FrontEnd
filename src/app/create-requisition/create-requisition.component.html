@@ -1,0 +1,172 @@
+<h3 class="hh3">Заказать перевозку груза Online</h3>
+<button type="button" class="btn btn-info but1" routerLink="/view-requisition">Список перевозок</button>
+<form #createRequisition="ngForm">
+  <div class="bl1">
+    <table>
+      <td class="tdd">
+        <div class="form-group">
+          <label for="inputZak">Заказчик:</label>
+          <input name="customer" type="text" class="form-control" id="inputZak" aria-describedby="inputZak1" placeholder=""
+            [(ngModel)]="entryRequisition.customer"
+            #customerField="ngModel" required>
+          <small id="inputZak1" class="form-text text-muted">Укажите название Вашей организации.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputPerson">Контактное лицо:</label>
+          <input name="person" type="text" class="form-control" id="inputPerson" aria-describedby="inputPerson1" placeholder=""
+            [(ngModel)]="entryRequisition.person"
+            #personField="ngModel" required>
+          <small id="inputPerson1" class="form-text text-muted">Укажите лицо, оформляющее перевозку.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputTel">Контактные данные:</label>
+          <p-inputMask name="tel" type="tel" id="inputTel" placeholder="+375(99)999-99-99"
+            [(ngModel)]="entryRequisition.phone" mask="+375(99)999-99-99"
+            #telField="ngModel" required></p-inputMask>
+          <small id="inputTel1" class="form-text text-muted">Укажите номер телефона.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Ваш E-mail:</label>
+          <input name="email" type="email" class="form-control" id="inputEmail" aria-describedby="inputEmail1" placeholder=""
+            [(ngModel)]="entryRequisition.email"
+            #emailField="ngModel" required patterm="[A-Za-z0-9А-Яа-яЁё\D\s]{1,}[@][A-Za-z0-9А-Яа-яЁё\D\s]{4,6}[.][A-Za-z0-9А-Яа-яЁё\D\s]{2,3}">
+          <small id="inputEmail1" class="form-text text-muted">Укажите адрес Вашей электронной почты.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputPrim">Примечания:</label>
+          <input name="notes" type="text" class="form-control" id="inputPrim" aria-describedby="inputPrim1" placeholder=""
+            [(ngModel)]="entryRequisition.notes"
+            #notesField="ngModel" required>
+          <small id="inputCountryPrim1" class="form-text text-muted">Укажите дополнительную инормацию, если есть.</small>
+        </div>
+        <label for="inputCityZ">Город загрузки:</label>
+        <select name="cityZ" class="col-sm-12 col-form-label mdb-select md-form form-control" searchable="Search here.."
+          [(ngModel)]="entryRequisition.idCityZ"
+          #cityZField="ngModel" required>
+          <option *ngFor="let c of cities" value="{{c.id}}">{{c.city}}</option>
+        </select>
+        <small id="inputCityZ" class="form-text text-muted">Укажите город загрузки.</small>
+        <div class="bl2">
+          <label for="inputCityR">Город разгрузки:</label>
+          <select name="cityR" class="col-sm-12 col-form-label mdb-select md-form form-control" searchable="Search here.."
+            [(ngModel)]="entryRequisition.idCityR"
+            #cityRField="ngModel" required>
+            <option *ngFor="let c of cities" value="{{c.id}}">{{c.city}}</option>
+          </select>
+          <small id="inputCityR" class="form-text text-muted">Укажите город разгрузки.</small>
+        </div>
+      </td>
+      <td class="tdd">
+        <div class="form-group">
+          <label for="inputDateZ">Дата загрузки:</label>
+          <input name="dateZ" type="date" class="form-control" id="inputDateZ" aria-describedby="inputDateZ1" placeholder=""
+            [(ngModel)]="entryRequisition.dateZ"
+            #dateZField="ngModel" required>
+          <small id="inputDateZ1" class="form-text text-muted">Укажите дату готовности груза к перевозке.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputDateD">Желаемая дата доставки:</label>
+          <input name="dateD" type="date" class="form-control" id="inputDateD" aria-describedby="inputDateD1" placeholder=""
+            [(ngModel)]="entryRequisition.dateR"
+            #dateDField="ngModel" required>
+          <small id="inputDateD1" class="form-text text-muted">Укажите желаемые даты доставки груза.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputHar">Характер груза:</label>
+          <input name="cargo" type="text" class="form-control" id="inputHar" aria-describedby="inputHar1" placeholder=""
+            [(ngModel)]="entryRequisition.cargo"
+            #cargoField="ngModel" required>
+          <small id="inputHar1" class="form-text text-muted">Укажите наименование груза (количество кодов ТН ВЭД).</small>
+        </div>
+        <div class="form-group">
+          <label for="inputWeight">Масса груза брутто:</label>
+          <input name="weight" type="text" class="form-control" id="inputWeight" aria-describedby="inputWeight1" placeholder=""
+            [(ngModel)]="entryRequisition.weight"
+            #weightField="ngModel" required pattern="[0-9]{0,9}">
+          <small id="inputWeight1" class="form-text text-muted">Укажите массу груза БРУТТО, в тоннах.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputVol">Объём груза:</label>
+          <input name="volume" type="text" class="form-control" id="inputVol" aria-describedby="inputVol1" placeholder=""
+            [(ngModel)]="entryRequisition.volume"
+            #volumeField="ngModel" required pattern="[0-9]{0,9}">
+          <small id="inputVol1" class="form-text text-muted">Расчётный объём груза в метрах кубических.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputPTO">ПТО назначения:</label>
+          <input name="pto" type="text" class="form-control" id="inputPTO" aria-describedby="inputPTO1" placeholder=""
+            [(ngModel)]="entryRequisition.pto"
+            #ptoField="ngModel" required>
+          <small id="inputPTO1" class="form-text text-muted">Укажите желаемый пункт таможенного оформления.</small>
+        </div>
+        <label for="inputOpros">Опрос:<br></label>
+        <select name="opros" class="mdb-select md-form form-control" searchable="Search here.."
+          [(ngModel)]="entryRequisition.idSource"
+          #oprosField="ngModel" required>
+          <option *ngFor="let s of sources" value="{{s.id}}">{{s.source}}</option>
+        </select>
+        <small id="inputOpros" class="form-text text-muted">Укажите источник информации о нашей компании. Спасибо.</small>
+      </td>
+    </table>
+  </div>
+</form>
+<button
+  (click)="addRequisition(authorizationModal)"
+  type="button" class="btn btn-info but2">Готово</button>
+<p class="ppp">.</p>
+<ng-template #authorizationModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Ошибка!</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div *ngIf="entryRequisition.customer == null" class="modal-body">
+    Не заполнен заказчик.
+  </div>
+  <div *ngIf="entryRequisition.person == null" class="modal-body">
+    Не заполнено контактное лицо.
+  </div>
+  <div *ngIf="entryRequisition.phone == null" class="modal-body">
+    Не заполнен номер телефона.
+  </div>
+  <div *ngIf="entryRequisition.email == null" class="modal-body">
+    Не заполнен email.
+  </div>
+  <div *ngIf="entryRequisition.notes == null" class="modal-body">
+    Не заполнены примечания.
+  </div>
+  <div *ngIf="entryRequisition.idCityZ == null" class="modal-body">
+    Не заполнен город загрузки.
+  </div>
+  <div *ngIf="entryRequisition.idCityR == null" class="modal-body">
+    Не заполнен город разгрузки.
+  </div>
+  <div *ngIf="checkValidCity()" class="modal-body">
+    Город загрузки не может совпадать с городом разгрузки.
+  </div>
+  <div *ngIf="entryRequisition.dateZ == null" class="modal-body">
+    Не заполнена дата загрузки.
+  </div>
+  <div *ngIf="entryRequisition.dateR == null" class="modal-body">
+    Не заполнена дата разгрузки.
+  </div>
+  <div *ngIf="checkValidDate()" class="modal-body">
+    Дата загрузки не может быть раньше или совпадать с датой разгрузки.
+  </div>
+  <div *ngIf="entryRequisition.cargo == null" class="modal-body">
+    Не заполнен характер груза.
+  </div>
+  <div *ngIf="entryRequisition.weight == null" class="modal-body">
+    Не заполнена масса груза.
+  </div>
+  <div *ngIf="entryRequisition.volume == null" class="modal-body">
+    Не заполнен объем груза.
+  </div>
+  <div *ngIf="entryRequisition.pto == null" class="modal-body">
+    Не заполнен ПТО.
+  </div>
+  <div *ngIf="entryRequisition.idSource == null" class="modal-body">
+    Не заполнено поле опроса.
+  </div>
+</ng-template>

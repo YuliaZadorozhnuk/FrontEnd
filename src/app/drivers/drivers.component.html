@@ -1,0 +1,44 @@
+<h3 class="hh3">Водители</h3>
+<div class="but1">
+  <button type="button" class="btn btn-info but3" routerLink="/driver-add">Добавить водителя</button>
+  <button type="button" class="btn btn-info but3" routerLink="/entry-requisition">Назад</button>
+</div>
+<div class="table1">
+  <table class="table table-hover table-bordered">
+    <thead>
+    <tr class="table-info">
+      <th width="15%" scope="col">№ водителя</th>
+      <th width="20%" scope="col">ФИО</th>
+      <th width="15%" scope="col">Ставка</th>
+      <th width="10%" scope="col">Статус</th>
+      <th width="20%" scope="col">Действия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let driver of drivers">
+      <td>{{ driver.id }}</td>
+      <td>{{ driver.fio }}</td>
+      <td>{{ driver.rate }}</td>
+      <td>
+        <span>{{ driver.status === 1 ? '&#10004;' : '&#10006;' }}</span>
+      </td>
+      <td width="30%">
+        <button
+          (click)="editDriver(driver)"
+          type="button" class="btn btn-info but2">Редактировать</button>
+        <button
+          (click)="deleteDriver(driver.id)"
+          type="button" class="btn btn-info but2">Удалить</button>
+        <button
+          *ngIf="driver.status === 1"
+          (click)="changeStatus(driver)"
+          type="button" class="btn btn-info but2">Занять</button>
+        <button
+          *ngIf="driver.status === 0"
+          (click)="changeStatus(driver)"
+          type="button" class="btn btn-info but2">Освободить</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,28 @@
+.hh3 {
+  position: absolute;
+  left: 30px;
+  top: 70px;
+}
+
+.table1 {
+  width: 98%;
+  position: absolute;
+  top: 110px;
+  left: 12px;
+  overflow-y: scroll;
+  height: 490px;
+}
+
+.but1 {
+  margin-left: 15px;
+}
+
+.but2 {
+  position: absolute;
+  right: 10px;
+  top: 60px;
+}
+
+.but3 {
+  margin: 5px;
+}

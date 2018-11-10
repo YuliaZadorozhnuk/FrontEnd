@@ -1,0 +1,74 @@
+.hh3 {
+  position: absolute;
+  left: 15px;
+  top: 64px;
+}
+
+.but1 {
+  position: absolute;
+  right: 15px;
+  top: 65px;
+}
+
+.bl1 {
+  border: solid;
+  border-color: #bbdefb;
+  border-radius: 10px;
+  padding: 20px;
+  position: absolute;
+  left: 10px;
+  top: 110px;
+  width: 1325px;
+}
+
+.tdd {
+  width: 650px;
+}
+
+.but2 {
+  position: absolute;
+  left: 635px;
+  top: 1110px;
+}
+
+.ppp {
+  position: absolute;
+  top: 1175px;
+}
+
+.bl2 {
+  border: solid;
+  border-color: #bbdefb;
+  border-radius: 10px;
+  padding: 20px;
+  position: absolute;
+  left: 10px;
+  top: 930px;
+  width: 1325px;
+  height: 170px;
+}
+
+.bl3 {
+  position: relative;
+  top: 16px;
+}
+
+.but3 {
+  position: relative;
+  left: 920px;
+  top: -120px;
+}
+
+.hh1 {
+  position: relative;
+  left: 900px;
+  top: -80px;
+}
+
+input.ng-touched.ng-invalid {
+  border:solid red 2px;
+}
+
+input.ng-touched.ng-valid {
+  border:solid green 2px;
+}

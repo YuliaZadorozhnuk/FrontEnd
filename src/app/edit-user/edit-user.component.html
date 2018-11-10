@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Изменение экспедитора № {{ tempUser.id }}</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="bt1">
+    <div class="text-center">
+      <p class="h4 mb-4"></p>
+      <p>Введите данные, которые хотите изменить.</p>
+      <input
+        [(ngModel)]="tempUser.name"
+        type="text" name="name" id="name-user" class="form-control mb-4" placeholder="Имя"
+        #nameField="ngModel" required pattern="[A-Za-z0-9А-Яа-яЁё\D\s]{5,}">
+      <input
+        [(ngModel)]="tempUser.login"
+        type="text" name="login" id="login-user" class="form-control mb-4" placeholder="Логин"
+        #loginField="ngModel" required pattern="[A-Za-z0-9А-Яа-яЁё\D\s]{5,}">
+      <input
+        [(ngModel)]="tempUser.password"
+        type="text" name="password" id="password-user" class="form-control mb-4" placeholder="Пароль"
+        #passwordField="ngModel" required pattern="[A-Za-z0-9А-Яа-яЁё\D\s]{5,}">
+      <button
+        (click)="saveForwarder(tempUser)"
+        [disabled]="nameField.invalid || loginField.invalid || passwordField.invalid"
+        class="btn btn-info btn-block" type="button">Сохранить.</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,31 @@
+<button type="button" class="btn btn-info but1" routerLink="/">Назад</button>
+<div class="bl1 text-center">
+  <p class="h4 mb-4">Здравствуйте!</p>
+  <p>Введите свой логин и пароль для авторизации.</p>
+  <input
+    [(ngModel)]="login"
+    type="text" name="login" id="defaultSubscriptionFormPassword" class="form-control mb-4" placeholder="Логин"
+    #loginField="ngModel" required pattern="[A-Za-z0-9А-Яа-яЁё\D\s]{5,}">
+  <input
+    [(ngModel)]="password"
+    type="password" name="password" id="defaultSubscriptionFormEmail" class="form-control mb-4" placeholder="Пароль"
+    #passwordField="ngModel" required pattern="[A-Za-z0-9А-Яа-яЁё\D\s]{5,}">
+  <button
+    (click)="authorization(authorizationModal)"
+    class="btn btn-info btn-block" type="submit">Войти</button>
+  <button class="btn btn-info btn-block" type="submit" routerLink="/registration">Регистрация</button>
+</div>
+<ng-template #authorizationModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Ошибка!</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div *ngIf="user == null && user.status === 1" class="modal-body">
+    Введен неверный логин или пароль.
+  </div>
+  <div *ngIf="user.status === 0" class="modal-body">
+    Вы заблокированы. Обратитесь к администратору.
+  </div>
+</ng-template>

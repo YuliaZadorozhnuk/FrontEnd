@@ -1,0 +1,116 @@
+.text1 {
+  position: absolute;
+  color: white;
+  top: 170px;
+  left: 170px;
+  text-align: center;
+  text-shadow: black 0 0 5px;
+}
+
+.bl1 {
+  position: absolute;
+  left: 530px;
+  top: 420px;
+}
+
+.bl2 {
+  position: absolute;
+  left: 60px;
+  top: 490px;
+}
+
+.bl3 {
+  position: absolute;
+  left: 450px;
+  top: 520px;
+  width: 200px;
+}
+
+.bl4 {
+  position: absolute;
+  left: 720px;
+  top: 520px;
+  width: 200px;
+}
+
+.bl5 {
+  position: absolute;
+  left: 940px;
+  top: 490px;
+}
+
+.bl6 {
+  position: absolute;
+  text-align: center;
+  left: 390px;
+  top: 725px;
+}
+
+.bl7 {
+  position: absolute;
+  left: 80px;
+  top: 840px;
+}
+
+.bl8 {
+  position: absolute;
+  text-align: center;
+  left: 200px;
+  top: 1085px;
+}
+
+.sotr1 {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  top: 1220px;
+}
+
+.sotr2 {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  top: 1570px;
+}
+
+.sotr3 {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  top: 1900px;
+}
+
+.bl9 {
+  position: absolute;
+  left: 50px;
+  top: 2280px;
+}
+
+.bl10 {
+  position: absolute;
+  left: 800px;
+  top: 2280px;
+}
+
+.bl11 {
+  position: absolute;
+  left: 60px;
+  top: 2635px;
+}
+
+.bl12 {
+  position: absolute;
+  left: 395px;
+  top: 2600px;
+}
+
+.but1 {
+  position: absolute;
+  left: 1205px;
+  top: 2282px;
+}
+
+.ppp {
+  position: absolute;
+  top: 2940px;
+}

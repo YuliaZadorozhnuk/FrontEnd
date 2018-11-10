@@ -1,0 +1,137 @@
+<h3 class="hh3">Перевозка № {{ requisition.idEntryRequisition }}</h3>
+<div class="but1">
+  <button type="button" class="btn btn-info" routerLink="/entry-requisition">Назад</button>
+</div>
+
+<div class="bl1">
+  <table>
+    <td class="tdd">
+        <div class="form-group">
+          <label for="inputZak">Заказчик:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.customer" disabled
+            type="text" class="form-control" id="inputZak" aria-describedby="inputZak1" placeholder="">
+          <small id="inputZak1" class="form-text text-muted">Название организации заказчика.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputPerson">Контактное лицо:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.person" disabled
+            type="text" class="form-control" id="inputPerson" aria-describedby="inputPerson1" placeholder="">
+          <small id="inputPerson1" class="form-text text-muted">Укажите лицо, оформляющее перевозку.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputTel">Контактные данные:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.phone" disabled
+            type="tel" class="form-control" id="inputTel" aria-describedby="inputTel1" placeholder="">
+          <small id="inputTel1" class="form-text text-muted">Номер телефона.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Ваш E-mail:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.email" disabled
+            type="email" class="form-control" id="inputEmail" aria-describedby="inputEmail1" placeholder="">
+          <small id="inputEmail1" class="form-text text-muted">Адрес электронной почты.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputPrim">Примечания:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.notes" disabled
+            type="text" class="form-control" id="inputPrim" aria-describedby="inputPrim1" placeholder="">
+          <small id="inputCountryPrim1" class="form-text text-muted">Дополнительная инормация.</small>
+        </div>
+      <div class="form-group">
+        <label for="inputCountryZ">Страна загрузки:</label>
+        <input
+          [ngModel]="requisition.entryRequisitionByIdEntryRequisition.cityByIdCityZ.city" disabled
+          type="text" class="form-control" id="inputCountryZ" aria-describedby="inputCountryZ1" placeholder="">
+        <small id="inputCountryZ1" class="form-text text-muted">Страна загрузки.</small>
+      </div>
+      <div class="form-group">
+        <label for="inputCountryZ">Страна разгрузки:</label>
+        <input
+          [ngModel]="requisition.entryRequisitionByIdEntryRequisition.cityByIdCityR.city" disabled
+          type="text" class="form-control" id="inputCountryR" aria-describedby="inputCountryR1" placeholder="">
+        <small id="inputCountryR1" class="form-text text-muted">Страна разгрузки.</small>
+      </div>
+    </td>
+    <td class="tdd">
+        <div class="form-group">
+          <label for="inputDateZ">Дата загрузки:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.dateZ" disabled
+            type="date" class="form-control" id="inputDateZ" aria-describedby="inputDateZ1" placeholder="">
+          <small id="inputDateZ1" class="form-text text-muted">Дата готовности груза к перевозке.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputDateD">Желаемая дата доставки:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.dateR" disabled
+            type="date" class="form-control" id="inputDateD" aria-describedby="inputDateD1" placeholder="">
+          <small id="inputDateD1" class="form-text text-muted">Желаемые даты доставки груза.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputHar">Характер груза:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.cargo" disabled
+            type="text" class="form-control" id="inputHar" aria-describedby="inputHar1" placeholder="">
+          <small id="inputHar1" class="form-text text-muted">Наименование груза (количество кодов ТН ВЭД).</small>
+        </div>
+        <div class="form-group">
+          <label for="inputWeight">Масса груза брутто:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.weight" disabled
+            type="text" class="form-control" id="inputWeight" aria-describedby="inputWeight1" placeholder="">
+          <small id="inputWeight1" class="form-text text-muted">Массу груза БРУТТО, в тоннах.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputVol">Объём груза:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.volume" disabled
+            type="text" class="form-control" id="inputVol" aria-describedby="inputVol1" placeholder="">
+          <small id="inputVol1" class="form-text text-muted">Расчётный объём груза в метрах кубических.</small>
+        </div>
+        <div class="form-group">
+          <label for="inputPTO">ПТО назначения:</label>
+          <input
+            [ngModel]="requisition.entryRequisitionByIdEntryRequisition.pto" disabled
+            type="text" class="form-control" id="inputPTO" aria-describedby="inputPTO1" placeholder="">
+          <small id="inputPTO1" class="form-text text-muted">Желаемый пункт таможенного оформления.</small>
+        </div>
+      <div class="form-group">
+        <label for="inputOpros">Опрос:</label>
+        <input
+          [ngModel]="requisition.entryRequisitionByIdEntryRequisition.sourceByIdSource.source" disabled
+          type="text" class="form-control" id="inputOpros" aria-describedby="inputOpros1" placeholder="">
+        <small id="inputOpros1" class="form-text text-muted">Источник информации о нашей компании.</small>
+      </div>
+    </td>
+  </table>
+</div>
+<div class="bl2">
+  <h6>Расчет стоимости перевозчки:</h6>
+    <label for="inputDriver">Перевозчик:<br></label>
+    <select
+      *ngIf="requisition.status !== 1"
+      #selectField="ngModel" required
+      [(ngModel)]="requisition.idDriver"
+      (ngModelChange)="getCostOfRequisition($event)"
+      class="col-sm-6 col-form-label mdb-select md-form form-control" searchable="Search here..">
+      <option *ngFor="let d of drivers" value="{{d.id}}">{{ d.fio }}, {{ d.rate}} км</option>
+    </select>
+  <select
+    *ngIf="requisition.status === 1" disabled
+    [(ngModel)]="requisition.idDriver"
+    (ngModelChange)="getCostOfRequisition($event)"
+    class="col-sm-6 col-form-label mdb-select md-form form-control" searchable="Search here..">
+    <option *ngFor="let d of allDrivers" value="{{d.id}}">{{ d.fio }}, {{ d.rate }} км</option>
+  </select>
+    <small id="inputDriver" class="form-text text-muted">Укажите перевозчика.</small>
+    <h1 class="hh1">{{ requisition.cost }}</h1>
+</div>
+<button
+  (click)="acceptRequisition()"
+  [disabled]="requisition.status === 1 ? false : selectField.invalid"
+  type="button" class="btn btn-info but2">Готово</button>
+<p class="ppp">.</p>
